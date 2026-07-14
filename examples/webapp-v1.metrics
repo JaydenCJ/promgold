@@ -1,0 +1,24 @@
+# Snapshot of a small web service's /metrics endpoint — "version 1".
+# HELP http_requests_total Total HTTP requests served.
+# TYPE http_requests_total counter
+http_requests_total{method="get",code="200"} 10234
+http_requests_total{method="get",code="404"} 27
+http_requests_total{method="post",code="200"} 933
+http_requests_total{method="post",code="500"} 4
+# HELP http_request_duration_seconds HTTP request latency.
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.1"} 9800
+http_request_duration_seconds_bucket{le="0.5"} 11100
+http_request_duration_seconds_bucket{le="1"} 11190
+http_request_duration_seconds_bucket{le="+Inf"} 11198
+http_request_duration_seconds_sum 402.7
+http_request_duration_seconds_count 11198
+# HELP queue_depth Jobs waiting in the background queue.
+# TYPE queue_depth gauge
+queue_depth 7
+# HELP build_info Build metadata.
+# TYPE build_info gauge
+build_info{version="1.4.2",revision="d0c451f"} 1
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 12

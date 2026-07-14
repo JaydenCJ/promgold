@@ -1,0 +1,17 @@
+# build artifacts
+/promgold
+/dist/
+
+# test and coverage output
+*.test
+*.out
+coverage.*
+
+# local goldens produced while experimenting
+/promgold.golden.json
+
+# editor noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
